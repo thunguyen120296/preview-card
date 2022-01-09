@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --main-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --main-heading: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+h1, h2{
+    color: var(--main-heading);
+}
+h3{
+    color: var(--stat-headings);
+    font-weight: 400;
+}
+p{
+    color: var(--main-paragraph);
+}
+span{
+    color: var(--accent);
+}
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1em;
+    background-color: var(--main-bg);
+    
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card__box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+}
+.card__left{
+    margin: 64px;
+}
+.card__left__desc{
+    margin-bottom: 30px;
+}
+.card__left__desc h1{
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0.7em;
+}
+.card__left__count{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.count h2{
+    font-size: 1.5em;
+}
+.card__right{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card__right::after{
+    content: '';
+    background-color: rgba(120, 29, 177, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card__right img{
+    border-radius: 0 12px 12px 0;
+    height: 100%;
+    object-fit: fill;
+}
+.attribution{
+    color: var(--main-heading);
+    margin: 30px 0;
+}
+
+@media screen and (max-width: 991px) {
+    .card__box{
+        max-width: 700px;
+    }
+    .card__left{
+        margin: 30px;
+    }
+    .count p{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card__box{
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        text-align: center;
+        margin-top: 32px;
+    }
+    .card__left{
+        order: 1;
+    }
+    .card__right img{
+        border-radius: 12px 12px 0 0;
+    }
+    .card__left__count{
+        grid-template-columns: 1fr;
+    }
+}
